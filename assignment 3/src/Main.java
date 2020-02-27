@@ -9,7 +9,7 @@ public class Main {
                     "1. Exercise 1\n" +
                     "2. Exercise 2\n" +
                     "3. Extra exercise\n" +
-                    "4. Exit\n");
+                    "4. Exit");
             int choice = scanner.nextInt();
             if (choice == 1) {
                 Exercise1 exercise1 = new Exercise1();
@@ -17,8 +17,9 @@ public class Main {
             } else if (choice == 2) {
                 System.out.println("Please enter the notation: ");
                 String notation = scanner.next();
-                Exercise2 exercise2 = new Exercise2(notation);
-                exercise2.getDescription();
+                Card card = new Card(notation);
+                String output = card.getDescription();
+                System.out.println(output);
             } else if (choice == 3) {
                 System.out.println("Please enter html to check: ");
                 String str = scanner.next();

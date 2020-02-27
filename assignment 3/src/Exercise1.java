@@ -29,12 +29,20 @@ public class Exercise1 {
             } else {
                 mindiff = minute2 - minute1;
             }
-        } else {
+        } else if(hour1 < hour2) {
             hourdiff = hour2 - hour1;
             if(minute1 > minute2) {
                 mindiff = 60 - (minute1 - minute2);
                 hourdiff -= 1;
             } else {
+                mindiff = minute2 - minute1;
+            }
+        } else if(hour1 == hour2) {
+            if(minute1 > minute2) {
+                hourdiff = 23;
+                mindiff = 60 - (minute1 - minute2);
+            } else {
+                hourdiff = 0;
                 mindiff = minute2 - minute1;
             }
         }
