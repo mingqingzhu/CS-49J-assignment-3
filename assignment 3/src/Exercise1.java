@@ -21,31 +21,17 @@ public class Exercise1 {
         hour2 = secondTime / 100;
         minute2 = secondTime % 100;
 
-        if(hour1 > hour2) {
-            hourdiff = hour2 + 24 - hour1;
-            if(minute1 > minute2) {
-                mindiff = 60 - (minute1 - minute2);
-                hourdiff -= 1;
-            } else {
-                mindiff = minute2 - minute1;
-            }
-        } else if(hour1 < hour2) {
-            hourdiff = hour2 - hour1;
-            if(minute1 > minute2) {
-                mindiff = 60 - (minute1 - minute2);
-                hourdiff -= 1;
-            } else {
-                mindiff = minute2 - minute1;
-            }
-        } else if(hour1 == hour2) {
-            if(minute1 > minute2) {
-                hourdiff = 23;
-                mindiff = 60 - (minute1 - minute2);
-            } else {
-                hourdiff = 0;
-                mindiff = minute2 - minute1;
-            }
+        hourdiff = hour2 - hour1;
+        mindiff = minute2 - minute1;
+
+        if(mindiff < 0){
+            mindiff += 60;
+            hourdiff -=1;
         }
+        if(hourdiff < 0){
+            hourdiff += 24;
+        }
+        
         System.out.println(hourdiff + " hours " + mindiff + " minutes\n");
     }
 }
